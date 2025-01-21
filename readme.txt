@@ -14,7 +14,7 @@ Sistem ini mengintegrasikan deteksi jumlah orang menggunakan kamera dengan kontr
 
 Kebutuhan Sistem
 ---------------
-1. Python 3.8 atau lebih baru
+1. Python 3.10.11
 2. ESP32 DevKit v1
 3. Sensor cahaya (LDR)
 4. LED
@@ -23,11 +23,11 @@ Kebutuhan Sistem
 
 Dependensi Python
 ----------------
-- OpenCV (cv2)
-- NumPy
-- YOLO (ultralytics)
-- supervision
-- paho-mqtt
+- OpenCV (cv2) 4.10.0
+- NumPy 2.2.0
+- YOLO (ultralytics 8.3.52)
+- supervision 0.25.1
+- paho-mqtt 1.6.1
 
 Dependensi Arduino
 -----------------
