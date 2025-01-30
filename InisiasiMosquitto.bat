@@ -20,6 +20,28 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "C:\Program Files\mosquitto"
     
+    :: Check if mosquitto.conf exists
+    if not exist "mosquitto.conf" (
+        echo Creating new mosquitto.conf file...
+        echo listener 1883 0.0.0.0> mosquitto.conf
+        echo allow_anonymous true>> mosquitto.conf
+        goto StartMosquitto
+    )
+
+    :: Check if required settings exist in mosquitto.conf
+    findstr /C:"listener 1883 0.0.0.0" mosquitto.conf >nul
+    if errorlevel 1 (
+        echo Adding listener configuration...
+        echo listener 1883 0.0.0.0>> mosquitto.conf
+    )
+
+    findstr /C:"allow_anonymous true" mosquitto.conf >nul
+    if errorlevel 1 (
+        echo Adding anonymous access configuration...
+        echo allow_anonymous true>> mosquitto.conf
+    )
+
+:StartMosquitto
     :: Kill any existing mosquitto processes
     taskkill /F /IM mosquitto.exe /T > nul 2>&1
     
