@@ -20,6 +20,9 @@ Kebutuhan Sistem
 4. LED
 5. Mosquitto MQTT Broker
 6. Kamera webcam
+7. NVIDIA GPU dengan CUDA support (opsional, untuk akselerasi GPU) dengan dependensi:
+   - CUDA Toolkit 11.x atau lebih baru
+   - cuDNN
 
 Dependensi Python
 ----------------
@@ -28,6 +31,14 @@ Dependensi Python
 - YOLO (ultralytics 8.3.52)
 - supervision 0.25.1
 - paho-mqtt 1.6.1
+(opsional, untuk akselerasi GPU)
+- PyTorch 2.6.0+cu118 (dengan CUDA support untuk GPU)
+- torchvision 0.21.0+cu118
+- Python packages tambahan:
+  * collections
+  * queue
+  * json
+  * time
 
 Dependensi Arduino
 -----------------
