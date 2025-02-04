@@ -65,10 +65,14 @@ Konfigurasi
    - Pastikan kamera terdeteksi
 
 3. Koneksi Hardware:
-   - LED -> Pin 2
-   - LDR -> Pin 34
-   - Gunakan resistor pull-down 10k ohm untuk LDR
-   - Gunakan resistor 220 ohm untuk LED
+   - Sensor cahaya (LDR Module)
+     -	VCC → 5V ESP32
+     -	GND → Resistor 10k ohm → GND ESP32
+     -	A0 → Pin 34 ESP32 (untuk membaca nilai analog)
+   - LED
+     -	Anoda (kaki panjang LED) → Pin 2 ESP32
+     -	Katoda (kaki pendek LED) → Resistor → GND ESP32 
+
 
 Cara Kerja
 ---------
